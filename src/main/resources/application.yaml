@@ -1,0 +1,23 @@
+
+server:
+  port: 8083
+
+spring:
+  application:
+    name: spring-kafka-consumer
+
+  # Kafka Configuration
+  kafka:
+    bootstrap-servers: localhost:9092     #Kafka server localhost
+    consumer:
+      group-id: consumer-group-id        # Specify a unique group ID for the consumer, to give any name
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+#Eureka Client Configuration
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
